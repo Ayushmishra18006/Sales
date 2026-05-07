@@ -17,7 +17,7 @@ st.markdown("Comparing XGBoost vs. Random Forest for Retail Prediction")
 def load_real_data():
     try:
         # 1. Load the CSV
-        df = pd.read_csv('walmart.csv')
+        df = pd.read_csv('Walmart.csv')
         
         # 2. Clean column names (removes hidden spaces like ' Weekly_Sales')
         df.columns = df.columns.str.strip()
@@ -42,7 +42,7 @@ def load_real_data():
             
         return df
     except FileNotFoundError:
-        st.error("🚨 Error: 'walmart.csv' not found in this folder!")
+        st.error("🚨 Error: 'Walmart.csv' not found in this folder!")
         return None
     except Exception as e:
         st.error(f"🚨 An error occurred: {e}")
@@ -131,4 +131,4 @@ if df is not None:
         st.dataframe(fore[['Date', 'Predicted_Sales']])
 
 else:
-    st.info("Check your folder to ensure 'walmart.csv' is present and formatted correctly.")
+    st.info("Check your folder to ensure 'Walmart.csv' is present and formatted correctly.")
